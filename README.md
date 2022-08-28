@@ -3,6 +3,7 @@
 #### Project title : Gom-Gom
 #### Project period : 2022.05 ~
 #### Git Lab : https://lab.hanium.or.kr/22_HF252/22_hf252
+#### 인하대학교 김다연 윤서영 이연상 전태현 정병훈
 -----------------------
 ## Description
 - 본 프로젝트에서 개발한 프로그램(앱)은 사용자가 작성한 일기를 자연어 분석 모델을 통해 분석하여 매일 감정 상태를 기록함.
@@ -26,10 +27,12 @@
 | 사용자 작성 일기 기반 감정분석 | 전송된 일기 데이터를 서버에서 자연어 처리를 통해 문장별 감정분석 을 실행, MPAndroidChart 라이브러리를 이용한 시각화 | ![image](https://user-images.githubusercontent.com/95534831/187061931-532f5230-1d91-47ff-a981-39c18994f5dd.png)
 | 사용자 작성 일기 기반 콘텐츠 추천 | -사용자가 작성한 일기를 기반한 유사도 분석과 감정 분석 결과를 이용한 음악 및 영화 콘텐츠 추천 | ![image](https://user-images.githubusercontent.com/95534831/187061974-d45ae27b-d662-4045-8cce-34a4ec5ec5ec.png)
 
-
+<br>
 
 ## Run
 현재 계속 개발중인 프로젝트로 서버를 배포하고 있지 않아 실행 할 수 없습니다.
+
+<br>
 
 ### Environment
 > Client - Java11(Android Studio)
