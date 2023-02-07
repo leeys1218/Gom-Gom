@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="testServer_han.demo.mapper.TestMapper">
+
+    <select id="getDiary" resultType="testServer_han.demo.model.Diary">
+        select title, content, emotion_name, word
+        from Diary as d, Word as c, Emotion as e
+        where d.user_id = #{user_id}
+          and d.date = #{date}
+          and d.wordIdx = c.wordIdx
+          and c.emotionIdx = e.emotionIdx;
+    </select>
+
+    <select id="getCalender" resultType="hashmap">
+        select date, emotion_name
+        from Diary as d, Word as c, Emotion as e
+        where d.user_id = #{user_id}
+          and d.wordIdx = c.wordIdx
+          and c.emotionIdx = e.emotionIdx;
+    </select>
+
+    <select id="predictEmo" resultType="string">
+        insert into Diary (user_id, title, content, date, wordIdx)
+            values(#{user_id}, #{title}, #{content}, #{date}, #{emotionIdx});
+    </select>
+
+    <select id="getRecomData" resultType="hashmap">
+        select content, emotion_name
+        from Diary as d, Word as c, Emotion as e
+        where d.user_id = #{user_id}
+          and date = #{date}
+          and d.wordIdx = c.wordIdx
+          and c.emotionIdx = e.emotionIdx;
+    </select>
+
+    <select id="getWord" resultType="string">
+        select word
+        from Diary as d, Word as c
+        where d.user_id = #{user_id}
+          and date = #{date}
+          and d.wordIdx = c.wordIdx;
+    </select>
+
+</mapper>

@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+apply plugin: 'war'
+bootWar {
+	archiveName("project_name.war")
+	mainClass = 'testServer_han.demo.TestServerHanApplication'
+}
+
+group = 'testServer_han'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	implementation 'com.google.api-client:google-api-client:1.30.9'
+	implementation 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+	implementation 'com.google.apis:google-api-services-youtube:v3-rev222-1.25.0'
+}
+
+bootJar {
+	mainClass = 'testServer_han.demo.TestServerHanApplication'
+}
+
+bootRun {
+	mainClass = 'testServer_han.demo.TestServerHanApplication'
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

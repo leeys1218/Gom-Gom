@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cclgsiqpiihk.ap-northeast-2.rds.amazonaws.com:3306/Diary_whale?characterEnconding=utf8
+    username: root
+    password: 12345678
+mybatis:
+  mapper-locations: classpath:mapper/**.xml
